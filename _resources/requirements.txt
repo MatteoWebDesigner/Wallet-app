@@ -1,8 +1,8 @@
 Create wallet web app
 
 Wallet features
-- add money and list it on Money in
-- remove money and list it on Money out
+- add money and list it on Money in with date
+- remove money and list it on Money out with date
 - The wallet can never contain a negative amount.
 - display your Balance
 - responsive header with three items: Home, Reset, View Source

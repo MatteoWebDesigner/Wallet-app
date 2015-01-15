@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Wallet Web App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -14,7 +14,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="src/assets/styles/main.css">
     <!-- endbuild -->
 </head>
 
@@ -49,13 +49,15 @@
         <!--<div ng-view=""></div>-->
 
         <div id="body">
-            <h2>Balance: $10.000</h2>
+            <div>
+                <h2>Balance: $10.000</h2>
 
-            <form>
-                <input type="text" placeholder="add or remove money"/>
-                <button>Add</button>
-				<button>Remove</button>
-            </form>
+                <form>
+                    <input type="text" placeholder="add or remove money"/>
+                    <button>Add</button>
+    				<button>Remove</button>
+                </form>
+            </div>
 
 			<div class="row">
 				<div class="col-md-6">
@@ -116,9 +118,7 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
+    <script src="app.js"></script>
     <!-- endbuild -->
 </body>
 </html>

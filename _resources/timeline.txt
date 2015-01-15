@@ -3,3 +3,4 @@ Timeline:
 0.10h - creation project folder
 0.20h - start scaffolding modules
 1.50h - installing font-awesome and design the layout
+20:00/20:00 - structure the angular app
