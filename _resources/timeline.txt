@@ -1,3 +1,4 @@
 Timeline:
 0.20h - analyse requirements
-0.10h - creation project folder structure
+0.10h - creation project folder
+0.20h - start scaffolding modules
