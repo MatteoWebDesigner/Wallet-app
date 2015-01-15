@@ -14,7 +14,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="src/assets/styles/main.css">
+    <link rel="stylesheet" href="src/common/assets/styles/main.css">
     <!-- endbuild -->
 </head>
 
@@ -48,7 +48,7 @@
 
         <div id="body">
             <div ng-controller="WalletCtrl">
-                <h2>Balance: {{ balance | currency}}</h2>
+                <h2>Balance: <span ng-bind-html="balance | awesomeCurrency:'fa-usd'"></span></h2>
 
                 <form name="walletController" novalidate>
                     <input type="number" placeholder="Add or remove money" ng-model="amount" ng-pattern="/^[1-9][0-9]*$/" required/>
@@ -121,8 +121,10 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="app.js"></script>
+    <script src="src/common/filters/awesome-currency.js"></script>
     <script src="src/wallet-controller/controllers/wallet-ctrl.js"></script>
     <script src="src/transitions-list/controllers/transitions.js"></script>
+
     <!-- endbuild -->
 </body>
 </html>

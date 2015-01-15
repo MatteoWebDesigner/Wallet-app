@@ -4,4 +4,7 @@ Timeline:
 0.20h - start scaffolding modules
 1.50h - installing font-awesome and design the layout
 1.49h - structure the angular app and wallet-controller functionalities
-22:00/22:00 - 
+1.00h - connect two controller and transition list
+23.10/23.00
+
+Total: 
