@@ -2,3 +2,4 @@ Timeline:
 0.20h - analyse requirements
 0.10h - creation project folder
 0.20h - start scaffolding modules
+1.50h - installing font-awesome and design the layout
