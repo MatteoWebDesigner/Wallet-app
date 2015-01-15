@@ -57,20 +57,24 @@
                 </form>
             </div>
 
-			<div class="row">
+			<div class="row" ng-controller="TransitionCtrl">
 				<div class="col-md-6">
 					<h3>Money In</h3>
 					<ul>
-						<li>no transaction</li>
-						<li>$ 10</li>
+						<li ng-hide="transitionsMoneyIn.length">no transaction</li>
+                        <li ng-repeat="transation in transitionsMoneyIn">
+                            <strong>{{ transation.amout | currency }}</strong> - {{ transation.date | date:'medium' }}
+                        </li>
 					</ul>
 				</div> 
 				<div class="col-md-6">
 					<h3>Money Out</h3>
-					<ul>
-						<li>no transaction</li>
-						<li>$ 10</li>
-					</ul>
+                    <ul>
+                        <li ng-hide="transitionsMoneyOut.length">no transaction</li>
+                        <li ng-repeat="transation in transitionsMoneyOut">
+                            <strong>{{ transation.amout | currency }}</strong> - {{ transation.date | date:'medium' }}
+                        </li>
+                    </ul>
 				</div>
 			</div>
 		</div>
@@ -118,6 +122,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="app.js"></script>
     <script src="src/wallet-controller/controllers/wallet-ctrl.js"></script>
+    <script src="src/transitions-list/controllers/transitions.js"></script>
     <!-- endbuild -->
 </body>
 </html>
