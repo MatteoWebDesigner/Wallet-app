@@ -2,12 +2,13 @@
 
 angular
 	.module('Wallet')
-	.controller('WalletCntr', function ($scope) {
-		$scope.balance = null;
+	.controller('WalletCtrl', function ($scope) {
+		$scope.balance = 0;
 		$scope.addMoney = function (value) {
-			$scope.balance += value;
+			this.balance += value;
+			
 		}
 		$scope.removeMoney = function (value) {
-			$scope.balance -= value;
+			this.balance -= value;
 		}
 	});

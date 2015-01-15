@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name walletwebappApp
+ * @name Wallet
  * @description
- * # walletwebappApp
+ * # Wallet
  *
  * Main module of the application.
  */
 angular
-  .module('walletwebappApp', [
+  .module('Wallet', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

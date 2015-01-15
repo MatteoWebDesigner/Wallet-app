@@ -4,9 +4,17 @@
 }
 
 /* page */
+:focus {
+  outline: none;
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+form input.ng-dirty.ng-invalid {
+  border: 1px solid red;
 }
 
 #header .title {

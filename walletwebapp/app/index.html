@@ -18,7 +18,7 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="walletwebappApp">
+<body ng-app="Wallet">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -46,16 +46,14 @@
             </nav>
         </div>
 
-        <!--<div ng-view=""></div>-->
-
         <div id="body">
-            <div>
-                <h2>Balance: $10.000</h2>
+            <div ng-controller="WalletCtrl">
+                <h2>Balance: {{ balance | currency}}</h2>
 
-                <form>
-                    <input type="text" placeholder="add or remove money"/>
-                    <button>Add</button>
-    				<button>Remove</button>
+                <form name="walletController" novalidate>
+                    <input type="number" placeholder="Add or remove money" ng-model="amount" ng-pattern="/^[1-9][0-9]*$/" required/>
+                    <button ng-click="walletController.$valid && addMoney(amount)">Add</button>
+    				<button ng-click="walletController.$valid && removeMoney(amount)">Remove</button>
                 </form>
             </div>
 
@@ -119,6 +117,7 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="app.js"></script>
+    <script src="src/wallet-controller/controllers/wallet-ctrl.js"></script>
     <!-- endbuild -->
 </body>
 </html>
