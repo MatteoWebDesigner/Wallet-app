@@ -1,0 +1,21 @@
+Create wallet web app
+
+Wallet features
+- add money and list it on Money in
+- remove money and list it on Money out
+- The wallet can never contain a negative amount.
+- display your Balance
+- responsive header with three items: Home, Reset, View Source
+
+Wallet requirements:
+- choose the currency, display it next to each item and the grand total.
+- Use fontawesome for the grand total currency for the items in the wallet it should be text.
+- Use angular.js
+- create at least a directive.
+- The input’s to add/remove amounts should have error checking and reporting.
+- The wallet data should persist on a page refresh for the same user until they click “Reset” in the menu. It is up to the developer to choose persistence method.
+- Use Github and do many commit
+- The menu should have menu items horizontally and collapse on mobile devices into a
+responsive menu. As an example of the layout and resize behaviour, view the fontawesome website in your browser to view the menu collapse effect.
+- The method of adding/removing values to a wallet can be via separate inputs or a single combined input with a select box for add/remove.
+- There is no limit to the amount of values added or removed in the wallet.
