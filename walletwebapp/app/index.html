@@ -37,9 +37,9 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">			
+                    <ul class="nav navbar-nav" ng-controller="WalletCtrl">			
 						<li class="active"><a ng-href="#">Home</a></li>
-						<li><a href="#">Reset</a></li>
+						<li><a href="#" ng-click="clearData()">Reset</a></li>
 						<li><a href="view-source:http://localhost:9000/#/">View Source</a></li>
                     </ul>
                 </div>
@@ -47,38 +47,9 @@
         </div>
 
         <div id="body">
-            <div ng-controller="WalletCtrl">
-                <h2>Balance: <span ng-bind-html="balance | awesomeCurrency:'fa-usd'"></span></h2>
-
-                <form name="walletController" novalidate>
-                    <input type="number" placeholder="Add or remove money" ng-model="amount" ng-pattern="/^[1-9][0-9]*$/" required/>
-                    <button ng-click="walletController.$valid && addMoney(amount)">Add</button>
-    				<button ng-click="walletController.$valid && removeMoney(amount)">Remove</button>
-                </form>
-            </div>
-
-			<div class="row" ng-controller="TransitionCtrl">
-				<div class="col-md-6">
-					<h3>Money In</h3>
-					<ul>
-						<li ng-hide="transitionsMoneyIn.length">no transaction</li>
-                        <li ng-repeat="transation in transitionsMoneyIn">
-                            <strong>{{ transation.amout | currency }}</strong> - {{ transation.date | date:'medium' }}
-                        </li>
-					</ul>
-				</div> 
-				<div class="col-md-6">
-					<h3>Money Out</h3>
-                    <ul>
-                        <li ng-hide="transitionsMoneyOut.length">no transaction</li>
-                        <li ng-repeat="transation in transitionsMoneyOut">
-                            <strong>{{ transation.amout | currency }}</strong> - {{ transation.date | date:'medium' }}
-                        </li>
-                    </ul>
-				</div>
-			</div>
+            <wallet-controller></wallet-controller>
+            <transations-list></transations-list>
 		</div>
-
 
 		<div id="footer">
 			<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
@@ -122,9 +93,13 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="app.js"></script>
     <script src="src/common/filters/awesome-currency.js"></script>
-    <script src="src/wallet-controller/controllers/wallet-ctrl.js"></script>
-    <script src="src/transitions-list/controllers/transitions.js"></script>
+   
+    <script src="src/wallet-controller/directives/wallet-controller.js"></script>
+    <script src="src/wallet-controller/controllers/wallet-controller.js"></script>
 
+    <script src="src/transitions-list/services/transitions-list.js"></script>
+    <script src="src/transitions-list/directives/transitions-list.js"></script>
+    <script src="src/transitions-list/controllers/transitions-list.js"></script>
     <!-- endbuild -->
 </body>
 </html>
