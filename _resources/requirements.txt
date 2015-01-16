@@ -1,6 +1,6 @@
 Create wallet web app
 
-Wallet features
+Wallet features:
 x add money and list it on Money in with date
 x remove money and list it on Money out with date
 x The wallet can never contain a negative amount.
