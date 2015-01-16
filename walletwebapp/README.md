@@ -1,3 +1,6 @@
+Wallet Web App
+==============
+
 prepare enviroment
 	npm install & bower install
 
