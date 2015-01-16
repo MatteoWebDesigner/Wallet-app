@@ -1,6 +1,6 @@
 angular
 	.module('Wallet')
-	.controller('TransitionCtrl', function ($scope) {
+	.controller('TransitionCtrl', ['$scope', function ($scope) {
 		$scope.transitionsMoneyIn = [];
 		$scope.transitionsMoneyOut = [];
 
@@ -10,4 +10,4 @@ angular
 		$scope.$on('transitionMoneyOut', function($obj, callback){
 			$obj.currentScope.transitionsMoneyOut.push(callback());
 		})
-	});
+	}]);
