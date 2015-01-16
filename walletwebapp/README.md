@@ -13,4 +13,5 @@ Dependencies:
 	Bower,
 	Bootstrap,
 	FontAwesome,
-	Angular
+	Angular,
+	grunt-ng-template

@@ -1,12 +1,18 @@
 Timeline:
+// Design
 0.20h - analyse requirements
 0.10h - creation project folder
 0.20h - start scaffolding modules
 1.50h - installing font-awesome and design the layout
+
+// Development
 1.49h - structure the angular app and wallet-controller functionalities
 1.00h - connect two controller and transition list
 1.20h - completed every requirement ecxept the persistent data.
 2.00h - completed local storage functionality
-11.47/0.00 - testing grunt serve and grunt build
+
+// Configuration Grunt
+1.40h +
+I do after - testing grunt serve and grunt build problem with the grunt configuration. Completed
 
 Total: 

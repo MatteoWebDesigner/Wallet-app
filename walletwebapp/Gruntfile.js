@@ -324,7 +324,7 @@ module.exports = function (grunt) {
       },
       styles: {
         expand: true,
-        cwd: 'app/styles',
+        cwd: 'app/src/common/assets/styles', //'app/styles'
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       }
@@ -350,6 +350,31 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      }
+    },
+
+    // minify Angular template
+    ngtemplates:  {
+      app: {
+        src:      ['./**/views/**.html', './**/views/**/**.html'],
+        dest:     'app/src/common/app.templates.js',
+        options: {
+          prefix: '/',
+          module: 'Wallet',
+          url: function(url) {
+            return url.replace('./app/', ''); // fix for absolute path urls
+          },
+          htmlmin: {
+            collapseBooleanAttributes:      true,
+            collapseWhitespace:             true,
+            removeAttributeQuotes:          true,
+            removeComments:                 true,
+            removeEmptyAttributes:          true,
+            removeRedundantAttributes:      true,
+            removeScriptTypeAttributes:     true,
+            removeStyleLinkTypeAttributes:  true
+          }
+        }
       }
     }
   });
@@ -389,6 +414,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'ngtemplates',
     'concat',
     'ngAnnotate',
     'copy:dist',
