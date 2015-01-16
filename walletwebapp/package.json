@@ -1,7 +1,9 @@
 {
   "name": "walletwebapp",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-devcode": "0.0.4-c"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-angular-templates": "^0.5.7",

@@ -12,7 +12,6 @@ Timeline:
 2.00h - completed local storage functionality
 
 // Configuration Grunt
-1.40h +
-I do after - testing grunt serve and grunt build problem with the grunt configuration. Completed
+4.05h - testing grunt serve and grunt build. problem with the grunt configuration ng-template and I create a production version. Completed.
 
-Total: 
+Total: 12.49h

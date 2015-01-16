@@ -320,6 +320,11 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
+        },{ 
+          expand: true, 
+          cwd: 'bower_components/font-awesome', 
+          src: 'fonts/*', 
+          dest: '<%= yeoman.dist %>' 
         }]
       },
       styles: {
@@ -353,15 +358,43 @@ module.exports = function (grunt) {
       }
     },
 
+    devcode : {
+      options : {
+        html: true,        // html files parsing?
+        js: true,          // javascript files parsing?
+        css: true,         // css files parsing?
+        clean: true,       // removes devcode comments even if code was not removed
+        block: {
+          open: 'devcode', // with this string we open a block of code
+          close: 'endcode' // with this string we close a block of code
+        },
+        dest: 'dist'       // default destination which overwrittes environment variable
+      },
+      server : {           // settings for task used with 'devcode:server'
+        options: {
+            source: '<%= yeoman.app %>/',
+            dest: '.tmp/',
+            env: 'development'
+        }
+      },
+      dist : {             // settings for task used with 'devcode:dist'
+        options: {
+          source: '.tmp/concat/scripts/',
+          dest: '.tmp/concat/scripts/',
+          env: 'prd'
+        }
+      }
+    },
+
     // minify Angular template
-    ngtemplates:  {
+    ngtemplates: {
       app: {
-        src:      ['./**/views/**.html', './**/views/**/**.html'],
-        dest:     'app/src/common/app.templates.js',
+        src: ['./**/views/**.html', './**/views/**/**.html'], //'app/src/{,*/}views/{,*/}*.html',
+        dest: 'app/src/common/app.templates.js',
         options: {
           prefix: '/',
           module: 'Wallet',
-          url: function(url) {
+          url: function (url) {
             return url.replace('./app/', ''); // fix for absolute path urls
           },
           htmlmin: {
@@ -377,8 +410,8 @@ module.exports = function (grunt) {
         }
       }
     }
-  });
 
+  });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -387,6 +420,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'devcode:server',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -402,6 +436,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'devcode:server',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
@@ -416,6 +451,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'ngtemplates',
     'concat',
+    'devcode:dist',
     'ngAnnotate',
     'copy:dist',
     'cdnify',

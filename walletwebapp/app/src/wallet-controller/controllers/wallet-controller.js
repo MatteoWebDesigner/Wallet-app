@@ -28,7 +28,7 @@ angular
 			if ($scope.moneyInfo.model.Balance < value) {
 				$log.debug('this amount ' + value + ' is greater than the balance ' + $scope.moneyInfo.model.Balance);
 
-				alert('No money, no party :)');
+				alert('You have not enough money');
 				return false;
 			}
 			$log.debug('remove this amount ' + value + ' in my wallet');

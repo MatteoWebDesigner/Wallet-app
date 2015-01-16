@@ -3,7 +3,7 @@ angular
 	.directive('transationsList', function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'src/transitions-list/views/transition-list.html',
+			templateUrl: '/src/transitions-list/views/transition-list.html',
 			controller: 'TransitionCtrl'
 		}
 	});
