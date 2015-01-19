@@ -1,3 +1,9 @@
+Wallet Web App
+==============
+
+location:
+the application is inside "walletwebapp" folder
+
 prepare enviroment
 	npm install & bower install
 

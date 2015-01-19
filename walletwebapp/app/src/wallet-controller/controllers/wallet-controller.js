@@ -2,7 +2,9 @@
 
 angular
 	.module('Wallet')
-	.controller('WalletCtrl', ['$log', '$scope', '$rootScope', 'PersistentDataMoneyFactory', function ($log, $scope, $rootScope, PersistentDataMoneyFactory) {
+	.controller('WalletCtrl', ['$log', '$scope', '$rootScope', 'Config', 'PersistentDataMoneyFactory', function ($log, $scope, $rootScope, Config, PersistentDataMoneyFactory) {
+		$scope.Config = Config;
+
 		// restore data
 		PersistentDataMoneyFactory.RestoreState();
 
@@ -16,6 +18,7 @@ angular
 			$scope.$broadcast('transitionMoneyIn', function () { 
 					return {
 						amout : value,
+						currency: Config.activeCurrency,
 						date : Date.now()
 					}
 				}
@@ -38,6 +41,7 @@ angular
 			$scope.$broadcast('transitionMoneyOut', function () { 
 					return {
 						amout : value,
+						currency: Config.activeCurrency,
 						date : Date.now()
 					}
 				}

@@ -1,6 +1,6 @@
 angular
 	.module('Wallet')
-	.controller('TransitionCtrl', ['$scope' ,'PersistentDataMoneyFactory', function ($scope, PersistentDataMoneyFactory) {
+	.controller('TransitionCtrl', ['$scope' , 'Config', 'PersistentDataMoneyFactory', function ($scope, Config, PersistentDataMoneyFactory) {
 		$scope.moneyInfo = PersistentDataMoneyFactory;
 
 		$scope.$on('transitionMoneyIn', function($obj, callback){

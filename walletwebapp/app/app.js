@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('Wallet', [
     'ngAnimate',
@@ -17,19 +18,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    /*
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-    */
+  .constant('Config', {
+    activeCurrency: 'GBP',
+    listCurrency: ['GBP', 'EUR', 'USD']
   });

@@ -1,5 +1,7 @@
 <div>
-    <h2>Balance: <span ng-bind-html="moneyInfo.model.Balance | awesomeCurrency:'fa-usd'"></span></h2>
+    <select ng-model="Config.activeCurrency" ng-options="currency for currency in Config.listCurrency"></select>
+
+    <h2>Balance: <span ng-bind-html="moneyInfo.model.Balance | awesomeCurrency:Config.activeCurrency"></span></h2>
 
     <form name="walletController" novalidate>
         <input type="number" placeholder="Add or remove money" ng-model="amount" ng-pattern="/^[1-9][0-9]*$/" required/>

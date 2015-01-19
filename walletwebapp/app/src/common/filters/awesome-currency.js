@@ -5,7 +5,7 @@ angular
 	.filter('awesomeCurrency', ['$filter', '$locale', 
     function($filter, $locale) {
         return function (amount, symbol, fractionSize) {
-            return $filter('currency')(amount, '<span class="fa '+ symbol +'"></span>');
+            return $filter('currency')(amount, '<span class="fa fa-' + symbol.toLowerCase() + '"></span>');
         };
     }
 ]);

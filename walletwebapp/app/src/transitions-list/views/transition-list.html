@@ -4,7 +4,7 @@
 		<ul>
 			<li ng-hide="moneyInfo.model.MoneyIn.length">no transaction</li>
             <li ng-repeat="transation in moneyInfo.model.MoneyIn">
-                <strong>{{ transation.amout | currency }}</strong> - {{ transation.date | date:'medium' }}
+                <strong>{{ transation.amout | currency:transation.currency }}</strong> - {{ transation.date | date:'medium' }}
             </li>
 		</ul>
 	</div> 
@@ -13,7 +13,7 @@
         <ul>
             <li ng-hide="moneyInfo.model.MoneyOut.length">no transaction</li>
             <li ng-repeat="transation in moneyInfo.model.MoneyOut">
-                <strong>{{ transation.amout | currency }}</strong> - {{ transation.date | date:'medium' }}
+                <strong>{{ transation.amout | currency:transation.currency }}</strong> - {{ transation.date | date:'medium' }}
             </li>
         </ul>
 	</div>
